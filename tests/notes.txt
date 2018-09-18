@@ -1,0 +1,7 @@
+Things that broke,
+
+src/components/Post
+  prop-types from the indivdual posts
+
+src/containers/Posts
+  prop-types from all the posts

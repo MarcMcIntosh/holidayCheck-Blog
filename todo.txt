@@ -1,0 +1,4 @@
+write rules for css
+Add image hadeling
+find out what testing frame work to use
+jest
