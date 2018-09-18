@@ -22,7 +22,9 @@ const htmlWebpackPlugin = new HtmlWebpackPlugin({
   filename: 'index.html',
 });
 
-const cleanWepackPlugin = new CleanWebpackPlugin([DIST_DIR]);
+const cleanWepackPlugin = new CleanWebpackPlugin([DIST_DIR], {
+  exclude: ['.gitignore'],
+});
 
 const definePlugin = new webpack.DefinePlugin({
   'process.env': {
