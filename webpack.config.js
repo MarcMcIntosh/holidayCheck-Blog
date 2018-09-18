@@ -2,6 +2,8 @@ const path = require('path');
 const webpack = require('webpack');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const GhPagesWebpackPlugin = require('gh-pages-webpack-plugin');
+
 
 const ROOT_DIR = path.resolve(__dirname);
 
@@ -25,6 +27,16 @@ const cleanWepackPlugin = new CleanWebpackPlugin([DIST_DIR]);
 const definePlugin = new webpack.DefinePlugin({
   'process.env': {
     NODE_ENV: PRODUCTION ? JSON.stringify('production') : JSON.stringify('developement'),
+  },
+});
+
+const ghPagesPlugin = new GhPagesWebpackPlugin({
+  path: DIST_DIR,
+  options: {
+    user: {
+      name: 'Marc McIntosh',
+      email: 'marcmcintosh1987@gmail.com',
+    },
   },
 });
 
@@ -76,6 +88,14 @@ const markdownRules = {
   },
 };
 
+const defaultPlugins = [
+  definePlugin,
+  htmlWebpackPlugin,
+  cleanWepackPlugin,
+];
+
+const plugins = PRODUCTION ? defaultPlugins.concat(ghPagesPlugin) : defaultPlugins;
+
 module.exports = {
   mode: PRODUCTION ? 'production' : 'development',
   entry: SRC_FILE,
@@ -88,11 +108,7 @@ module.exports = {
   },
   target: 'web',
   stats: { children: false },
-  plugins: [
-    definePlugin,
-    htmlWebpackPlugin,
-    cleanWepackPlugin,
-  ],
+  plugins,
   module: {
     rules: [
       jsRules,
