@@ -7,6 +7,7 @@ import RetrospectTimeManagement from './RetrospectTimeManagement.md';
 import AllOnboarded from './AllOnboarded.md';
 import PetProjects from './PetProjects.md';
 import TDDTFP from './TDDTFP.md';
+import WritingTestsAfterTheCode from './WritingTestsAfterTheCode.md';
 
 const posts = {
   '06254b2f-81f9-4917-a398-8605f093c1b5': {
@@ -56,6 +57,12 @@ const posts = {
     date: new Date(2018, 8, 14),
     title: 'TDD, TFP, TL;DR',
     url: TDDTFP,
+  },
+  '60c0c6a9-9c26-4767-8bf6-190adf6cefa2': {
+    id: '60c0c6a9-9c26-4767-8bf6-190adf6cefa2',
+    date: new Date(2018, 8, 18),
+    title: 'Writing tests after the code: Thing learned',
+    url: WritingTestsAfterTheCode,
   },
 };
 

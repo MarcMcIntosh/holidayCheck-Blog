@@ -2,8 +2,6 @@ import { createStore, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
 import reducer, { initialState } from './reducer';
 
-// fake state for now
-
 const isClient = typeof window !== 'undefined';
 const ENV = process.env.NODE_ENV || 'development';
 const isProduction = ENV === 'production';
