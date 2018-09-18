@@ -34,7 +34,7 @@ const ghPagesPlugin = new GhPagesWebpackPlugin({
   path: DIST_DIR,
   options: {
     user: {
-      name: 'Marc McIntosh',
+      name: 'MarcMcIntosh',
       email: 'marcmcintosh1987@gmail.com',
     },
   },
