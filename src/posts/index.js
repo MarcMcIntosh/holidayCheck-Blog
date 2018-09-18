@@ -8,6 +8,7 @@ import AllOnboarded from './AllOnboarded.md';
 import PetProjects from './PetProjects.md';
 import TDDTFP from './TDDTFP.md';
 import WritingTestsAfterTheCode from './WritingTestsAfterTheCode.md';
+import SomethingOrNothing from './SomethingOrNothing.md';
 
 const posts = {
   '06254b2f-81f9-4917-a398-8605f093c1b5': {
@@ -63,6 +64,12 @@ const posts = {
     date: new Date(2018, 8, 18),
     title: 'Writing tests after the code: Thing learned',
     url: WritingTestsAfterTheCode,
+  },
+  '0db6d7e9-daff-4420-8bc4-bbd2b4dda88a': {
+    id: '0db6d7e9-daff-4420-8bc4-bbd2b4dda88a',
+    date: new Date(2018, 8, 19),
+    title: ' Shipping something is better than shipping nothing',
+    url: SomethingOrNothing,
   },
 };
 

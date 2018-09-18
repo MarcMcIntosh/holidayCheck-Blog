@@ -1,5 +1,5 @@
 /* global test, expect */
-const sortByDate = require('../src/containers/Posts/sortByDate');
+const sortByDate = require('../src/Pages/Home/sortByDate');
 
 const testDateOne = new Date(2018, 8, 13);
 const testDateTwo = new Date(2018, 8, 14);

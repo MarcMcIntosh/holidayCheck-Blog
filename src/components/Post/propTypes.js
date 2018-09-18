@@ -1,6 +1,6 @@
 import { string, bool, instanceOf } from 'prop-types';
 
-const postPropTypes = {
+const propTypes = {
   id: string.isRequired,
   fetching: bool.isRequired,
   error: bool.isRequired,
@@ -10,4 +10,4 @@ const postPropTypes = {
   date: instanceOf(Date).isRequired,
 };
 
-export default postPropTypes;
+export default propTypes;

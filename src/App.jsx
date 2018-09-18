@@ -1,15 +1,21 @@
 import React from 'react';
 // import { hot } from 'react-hot-loader';
 import { Provider } from 'react-redux';
-import Posts from './containers/Posts';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import Home from './Pages/Home';
+import Blog from './Pages/Blog';
 import store from './store';
+import formatUrl from './formatUrl';
+
 
 const App = () => (
   <Provider store={store}>
-    <div>
-      <h1>Hello</h1>
-      <Posts />
-    </div>
+    <Router>
+      <div>
+        <Route exact path={formatUrl('/')} component={Home} />
+        <Route path={formatUrl('blog/:id')} component={Blog} />
+      </div>
+    </Router>
   </Provider>
 );
 

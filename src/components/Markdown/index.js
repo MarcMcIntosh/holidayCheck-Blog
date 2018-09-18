@@ -12,4 +12,6 @@ const markdownRenderer = new Remarkable('full', {
   },
 });
 
+// const Markdown = children => <article dangerouslySetInnerHTML={{ __html: markdownRenderer.render(children) }} />
+
 export default markdownRenderer;
