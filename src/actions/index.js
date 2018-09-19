@@ -8,16 +8,25 @@ const markdownRequest = payload => ({ type: MARKDOWN_REQUEST, payload });
 const markdownReceived = payload => ({ type: MARKDOWN_RECEIVED, payload });
 const markdownRejected = payload => ({ type: MARKDOWN_REJECTED, payload });
 
-
 export function fetchMarkdown(payload) {
-  markdownRequest({ ...payload, fetching: true });
-  const { url } = payload;
-  return fetch(url).then((res) => {
-    if (!res.ok) {
-      const { message } = res;
-      const error = { ...payload, message, error: true };
-      throw error;
-    }
-    return { ...payload, markdown: res.body() };
-  }).then(markdownReceived).catch(markdownRejected);
+  return (dispatch) => {
+    dispatch(markdownRequest({ ...payload, fetching: true }));
+    const { url } = payload;
+    return fetch(url).then((res) => {
+      if (!res.ok) {
+        const err = new Error(res.message || res.statusText || 'An error occured');
+        throw err;
+      }
+      return res.text();
+    }).then(markdown => dispatch(markdownReceived({
+      ...payload,
+      markdown,
+      fetching: false,
+    }))).catch(({ message }) => dispatch(markdownRejected({
+      ...payload,
+      error: true,
+      message,
+      fetching: false,
+    })));
+  };
 }

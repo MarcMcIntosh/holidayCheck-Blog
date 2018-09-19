@@ -5,12 +5,14 @@ import {
 } from './actions';
 
 import postData from './posts';
+import formatUrl from './formatUrl';
 
 const DEFAULT_STATE_FOR_POSTS = Object.values(postData).map(d => Object.assign({}, d, {
   fetching: false,
   markdown: '',
   error: false,
   message: '',
+  url: formatUrl(d.url),
 })).reduce((a, b) => Object.assign({}, a, {
   [b.id]: b,
 }), {});
@@ -32,7 +34,7 @@ function reducer(state = DEFAULT_STATE, action) {
     case MARKDOWN_RECEIVED:
     case MARKDOWN_REJECTED: return {
       ...state,
-      posts: updatePosts(state, action.payload),
+      posts: updatePosts(state, action),
     };
     default: return state;
   }

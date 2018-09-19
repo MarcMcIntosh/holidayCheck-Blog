@@ -20,9 +20,11 @@ export const propTypes = {
   date: instanceOf(Date).isRequired,
 };
 
-const mapStateToProps = ({ posts }, { params: { id } }) => ({
+/* const mapStateToProps = ({ posts, match: { params: { id } } }) => ({
   ...posts[id],
 });
+*/
+const mapStateToProps = ({ posts }, { match: { params: { id } } }) => posts[id];
 
 const mapDispatchToProps = dispatch => ({
   fetchData: payload => dispatch(fetchMarkdown(payload)),
