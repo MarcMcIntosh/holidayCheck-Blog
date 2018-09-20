@@ -5,6 +5,9 @@ Things occasionally worth looking at
 + [holidaycheck tech-blog](https://github.com/holidaycheck/tech-blog/tree/master/_posts) *written in markdown*
 + [holidaycheck tech-blog](http://techblog.holidaycheck.com/) *hosted*
 
+## Tips on testing
+https://medium.com/@kellyrmilligan/testing-async-actions-in-redux-with-isomorphic-fetch-and-fetch-mock-35f98c6c2ee7
+
 ## Narrative Structures
 Are blogs short stories?
 + [primary types](https://www.storyboardthat.com/articles/e/narrative-structures)
